@@ -7,3 +7,4 @@
 /dist
 .*.sw[a-p]
 *~
+*.kdev4
