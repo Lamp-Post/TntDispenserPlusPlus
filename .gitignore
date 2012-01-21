@@ -1,0 +1,9 @@
+/.classpath
+/.project
+/.settings
+/nbproject
+/target
+/bin
+/dist
+.*.sw[a-p]
+*~
