@@ -8,3 +8,4 @@
 .*.sw[a-p]
 *~
 *.kdev4
+build.sh
