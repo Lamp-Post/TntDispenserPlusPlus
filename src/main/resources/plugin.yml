@@ -2,5 +2,5 @@ name: TntDispenser
 main: org.beide.tntdispenser.TntDispenser
 version: 0.1.0
 website: http://beide.org
-author: Laura Huiberts
+author: Kees Huiberts
 description: Make dispensers place blocks of trinitroglycerin
