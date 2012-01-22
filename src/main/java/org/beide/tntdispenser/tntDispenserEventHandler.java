@@ -37,6 +37,7 @@ public class tntDispenserEventHandler extends BlockListener {
 	JavaPlugin plugin;
 	
 	tntDispenserEventHandler(JavaPlugin p, FileConfiguration c) {
+		super();
 		plugin = p;
 		config = c;
 	}
