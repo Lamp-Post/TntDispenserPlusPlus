@@ -40,7 +40,6 @@ public class tntDispenserEventHandler extends BlockListener {
 		super();
 		plugin = p;
 		config = c;
-		super();
 	}
 	
 	public void onBlockDispense(BlockDispenseEvent event) {
