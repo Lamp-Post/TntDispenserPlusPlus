@@ -26,24 +26,27 @@ import org.bukkit.event.Event;
  * along with tntDispenser.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+
+@SuppressWarnings("unused")
 public class TntDispenser extends JavaPlugin {
 	private static Logger log = Logger.getLogger("Minecraft");
 	PluginDescriptionFile desc;
 	
-	public void onDisable() {
-		log.info("Disabled " + desc.getName());
+	@Override
+	public void onEnable() {
+            getLogger().info("Have fun!");
+		
+		
+		getServer().getPluginManager().registerEvents(new TntDispenserEventHandler(this, getConfig()), this);
+
 	}
 	
-	public void onEnable() {
-		desc = this.getDescription();
-		
-		log.info(desc.getName() + " version "
-			 + desc.getVersion());
-		
-		
-		getServer().getPluginManager().registerEvent(Event.Type.BLOCK_DISPENSE, new tntDispenserEventHandler(this, getConfig()),
-																								 Event.Priority.Normal, this);
+	@Override
+	public void onDisable() {
+		getLogger().info("Bye!");
 	}
+	
+
 	
 }
 
