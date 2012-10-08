@@ -11,11 +11,9 @@ Configuration
 
 worldname:
   enabled: true
+
 worldname2:
   enabled: false
-
-If you have any questions, just send me an email
-re.miwh@hotmail.com
 
 Compiling
 ---------
@@ -37,3 +35,9 @@ Legal stuff
 -----------
 
 This code is licensed under the GNU GENERAL PUBLIC LICENSE Version 3. 
+
+Contact
+-------
+
+If you have any questions, just send me an email
+re.miwh@hotmail.com
