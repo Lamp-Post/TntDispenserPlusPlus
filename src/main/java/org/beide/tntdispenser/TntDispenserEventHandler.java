@@ -52,7 +52,7 @@ public class TntDispenserEventHandler implements Listener {
 			Configuration.set(dispenser.getWorld().getName() + ".Enabled", false);
 			plugin.saveConfig();
 		}
-		if(!Configuration.contains(dispenser.getWorld().getName() + ".creative")) {
+		if(!Configuration.contains(dispenser.getWorld().getName() + ".Creative World")) {
 			Configuration.set(dispenser.getWorld().getName() + ".Creative World", false);
 			plugin.saveConfig();
 		}
