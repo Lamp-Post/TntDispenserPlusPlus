@@ -59,7 +59,7 @@ public class TntDispenserEventHandler implements Listener {
 		*}
 */
 		if(Configuration.getBoolean("Worlds." + dispenser.getWorld().getName() + ".enabled") == true) {
-			//TODO if(Configuration.getBoolean("Worlds." + dispenser.getWorld().getName() + ".creative world") == true) 
+			//TODO if(Configuration.getBoolean("Worlds." + dispenser.getWorld().getName() + ".creative world") == true)
 			{
 			if((dispenser.getType() == Material.DISPENSER) && (event.getItem().getType() == Material.TNT) && !event.isCancelled()) {
 				Block blockToChange;
