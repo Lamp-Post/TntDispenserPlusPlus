@@ -4,6 +4,7 @@ import java.util.logging.Logger;
 
 import org.bukkit.Location;
 import org.bukkit.block.Block;
+import org.bukkit.block.Dispenser;
 import org.bukkit.Material;
 import org.bukkit.World;
 import org.bukkit.event.EventHandler;
@@ -48,17 +49,18 @@ public class TntDispenserEventHandler implements Listener {
 	public void BlockDispense(BlockDispenseEvent event) {
 		
 		Block dispenser = event.getBlock();
-		if(!Configuration.contains(dispenser.getWorld().getName() + ".Enabled")) {
-			Configuration.set(dispenser.getWorld().getName() + ".Enabled", false);
+		if(!Configuration.contains("Worlds." + dispenser.getWorld().getName() + ".enabled")) {
+			Configuration.set("Worlds." + dispenser.getWorld().getName() + ".enabled", true);
 			plugin.saveConfig();
 		}
-		if(!Configuration.contains(dispenser.getWorld().getName() + ".Creative World")) {
-			Configuration.set(dispenser.getWorld().getName() + ".Creative World", false);
-			plugin.saveConfig();
-		}
-
-		if(Configuration.getBoolean(dispenser.getWorld().getName() + ".Enabled") == true) {
-			if(Configuration.getBoolean(dispenser.getWorld().getName() + ".Creative World") == true) {
+		/*TODO if(!Configuration.contains("Worlds." + dispenser.getWorld().getName() + ".creative world")) {
+		*	Configuration.set("Worlds." + dispenser.getWorld().getName() + ".creative world", false);
+		*	plugin.saveConfig();
+		*}
+*/
+		if(Configuration.getBoolean("Worlds." + dispenser.getWorld().getName() + ".enabled") == true) {
+			//TODO if(Configuration.getBoolean("Worlds." + dispenser.getWorld().getName() + ".creative world") == true) 
+			{
 			if((dispenser.getType() == Material.DISPENSER) && (event.getItem().getType() == Material.TNT) && !event.isCancelled()) {
 				Block blockToChange;
 				switch(dispenser.getData()) {
@@ -89,7 +91,8 @@ public class TntDispenserEventHandler implements Listener {
 				}
 			}
 		}
-			if(Configuration.getBoolean(dispenser.getWorld().getName() + ".Creative World") == false) {
+/* TODO
+			if(Configuration.getBoolean("Worlds." + dispenser.getWorld().getName() + ".creative world") == false) {
 				if((dispenser.getType() == Material.DISPENSER) && (event.getItem().getType() == Material.TNT) && !event.isCancelled()) {
 					Block blockToChange;
 					switch(dispenser.getData()) {
@@ -120,40 +123,8 @@ public class TntDispenserEventHandler implements Listener {
 					}
 				}
 			}
-		}
-/*			if(Configuration.getBoolean(dispenser.getWorld().getName() + ".enabled") == true) {
-				if(Configuration.getBoolean(dispenser.getWorld().getName() + ".creative") == false) {
-				if((dispenser.getType() == Material.DISPENSER) && (event.getItem().getType() == Material.TNT) && !event.isCancelled()) {
-					Block blockToChange;
-					switch(dispenser.getData()) {
-						case 2:
-							//North
-							blockToChange = dispenser.getRelative(BlockFace.EAST);
-							break;
-						case 3:
-							//South
-							blockToChange = dispenser.getRelative(BlockFace.WEST);
-							break;
-						case 4:
-							//West
-							blockToChange = dispenser.getRelative(BlockFace.NORTH);
-							break;
-						case 5:
-							//East
-							blockToChange = dispenser.getRelative(BlockFace.SOUTH);
-							break;
-						default:
-							log.info("Direction not found: " + dispenser.getData());
-							blockToChange = dispenser.getRelative(BlockFace.UP);
-					}
-					
-					event.setCancelled(true);
-					if(blockToChange.isEmpty() || blockToChange.isLiquid()) {
-						blockToChange.setType(Material.TNT);
-					}
-				}
-				}
-			
-		}
-*/	}
+*/		
+			}
+
+	}
 }

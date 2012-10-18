@@ -29,21 +29,27 @@ import org.bukkit.event.Event;
 
 @SuppressWarnings("unused")
 public class TntDispenser extends JavaPlugin {
-	private static Logger log = Logger.getLogger("Minecraft");
+	public static Logger log = Logger.getLogger("Minecraft");
 	PluginDescriptionFile desc;
+
 	
 	@Override
-	public void onEnable() {
-            getLogger().info("Have fun!");
+	public void onEnable()
+	{
+            log.info("[TntDispenserPlusPlus] Have fun!");
 		
+            CommandHandler myExecutor = new CommandHandler(this, getConfig());
+            getCommand("tntdispenserplus").setExecutor(myExecutor);
+            getCommand("tdp").setExecutor(myExecutor);
+
 		
-		getServer().getPluginManager().registerEvents(new TntDispenserEventHandler(this, getConfig()), this);
+            getServer().getPluginManager().registerEvents(new TntDispenserEventHandler(this, getConfig()), this);
 
 	}
 	
 	@Override
 	public void onDisable() {
-		getLogger().info("Bye!");
+		log.info("[TntDispenserPlusPlus] Bye!");
 	}
 	
 

@@ -1,6 +1,21 @@
-name: TntDispenser
+name: TntDispenserPlusPlus
+author: Remi111
 main: org.beide.tntdispenser.TntDispenser
-version: 0.1.1
-website: http://beide.org
-author: Kees Huiberts
+version: 1.0.6
+website: http://dev.bukkit.org/server-mods/tntdispenserplus
+dev-url: http://dev.bukkit.org/server-mods/tntdispenserplus
 description: Make dispensers place blocks of trinitroglycerin
+softdepend: [Multiverse-Core,MultiWorld]
+commands:
+   tdp:
+      description: This enables the plugin for the specified world.
+      usage: /<command> [world] [enable] [true/false]
+   tntdispenserplus:
+      description: This disables the plugin for the specified world.
+      usage: /<command> [world] [enable] [true/false]
+#todo   tdp:
+#      description: This sets the type of the world(for this plugin not the whole server) to creative/survival.
+#      usage: /<command> [world] [enable] [true/false]
+#   tntdispenserplus:
+#      description: This sets the type of the world(for this plugin not the whole server) to creative/survival.
+#      usage: /<command> [world] [enable] [true/false]
